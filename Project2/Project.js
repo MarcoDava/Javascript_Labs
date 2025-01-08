@@ -12,18 +12,18 @@ const imageAltTexts = {
 const thumbBar = document.querySelector('.thumb-bar');
 const displayedImage = document.querySelector('.displayed-img');
 const btn = document.querySelector('.dark');
-const overlay = document.querySelector('.overlay');
+const overlay = document.querySelector('.overlay');//this is how javascript interacts with the HTML
 
 // Loop through image filenames and create thumbnails
 imageFilenames.forEach(filename => {
-    const newImage = document.createElement('img');
-    newImage.setAttribute('src', `images/${filename}`);
+    const newImage = document.createElement('img');//creating a new image element
+    newImage.setAttribute('src', `images/${filename}`);//sets the image to be one of the images in the file array
     newImage.setAttribute('alt', imageAltTexts[filename]);
-    thumbBar.appendChild(newImage);
+    thumbBar.appendChild(newImage);//adds it to the display box
 
     // Add click event listener to each thumbnail
     newImage.addEventListener('click', () => {
-        displayedImage.setAttribute('src', `images/${filename}`);
+        displayedImage.setAttribute('src', `images/${filename}`);//changes the displayed image to the image the user clicked on, on the thumb bar
         displayedImage.setAttribute('alt', imageAltTexts[filename]);
     });
 });
